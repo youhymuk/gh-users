@@ -1,0 +1,9 @@
+export const SET_USERS_LIST = 'SET_USERS_LIST';
+
+export const SET_USER_PROFILE = 'SET_USER_PROFILE';
+
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+
+export const DATA_REQUESTED = 'DATA_REQUESTED';
+
+export const DATA_LOADED = 'DATA_LOADED';
