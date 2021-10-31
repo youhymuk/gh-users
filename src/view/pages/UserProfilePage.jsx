@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { CircularProgress, Container } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -44,6 +45,10 @@ const UserProfilePage = ({ match }) => {
             )}
         </Container>
     );
+};
+
+UserProfilePage.propTypes = {
+    match: PropTypes.object.isRequired,
 };
 
 export default UserProfilePage;
