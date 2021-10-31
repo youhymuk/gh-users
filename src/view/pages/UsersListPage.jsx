@@ -24,7 +24,7 @@ const UsersListPage = () => {
 
     const onChangePage = (event, page) => {
         dispatch(setCurrentPage(page));
-        setSinceIndex(page * ITEMS_PER_PAGE);
+        setSinceIndex(page > 1 ? page * ITEMS_PER_PAGE : 0);
     };
 
     return (
@@ -34,7 +34,7 @@ const UsersListPage = () => {
                     sx={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
                 />
             )}
-            {!!users.length && (
+            {users.length && (
                 <>
                     <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto' }}>
                         {users.map((user) => (
