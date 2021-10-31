@@ -1,4 +1,4 @@
-import { SET_USERS_LIST, SET_USER_PROFILE, DATA_REQUESTED, DATA_LOADED, SET_CURRENT_PAGE } from '../../constants';
+import { SET_USERS_LIST, SET_USER_PROFILE, DATA_REQUESTED, DATA_LOADED, SET_CURRENT_PAGE } from 'constants/index';
 
 export const dataRequested = () => ({
     type: DATA_REQUESTED,

@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Avatar, Typography } from '@mui/material';
 
-import { routePaths } from '../../routes';
+import { routePaths } from 'routes';
 
-import avatar from '../../assets/images/avatar.png';
+import avatar from 'assets/images/avatar.png';
 
 const UserCard = ({ user }) => {
     const { login, html_url: htmlUrl, avatar_url: avatarUrl } = user;

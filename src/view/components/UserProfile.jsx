@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar, Card, Typography } from '@mui/material';
 
-import { transformDate } from '../../utils';
+import { transformDate } from 'utils';
 
-import avatar from '../../assets/images/avatar.png';
+import avatar from 'assets/images/avatar.png';
 
 const UserProfile = ({ user }) => {
     const {

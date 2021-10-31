@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Grid, Pagination, CircularProgress } from '@mui/material';
 
-import { ITEMS_PER_PAGE, TOTAL_PAGES_COUNT } from '../../constants';
-import { selectCurrentPage, selectIsLoaded, selectUsersList } from '../../store/selectors';
-import { setCurrentPage } from '../../store/actions';
-import { getUsers } from '../../store/thunks';
+import { ITEMS_PER_PAGE, TOTAL_PAGES_COUNT } from 'constants/index';
+import { selectCurrentPage, selectIsLoaded, selectUsersList } from 'store/selectors';
+import { setCurrentPage } from 'store/actions';
+import { getUsers } from 'store/thunks';
 
-import { UserCard } from '../components';
+import { UserCard } from 'view/components';
 
 const UsersListPage = () => {
     const [sinceIndex, setSinceIndex] = useState(0);

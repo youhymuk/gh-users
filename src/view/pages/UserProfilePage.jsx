@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { CircularProgress, Container } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import { getUserProfile } from '../../store/thunks';
-import { selectIsLoaded, selectUserProfile } from '../../store/selectors';
-import { routePaths } from '../../routes';
+import { getUserProfile } from 'store/thunks';
+import { selectIsLoaded, selectUserProfile } from 'store/selectors';
+import { routePaths } from 'routes';
 
-import { UserProfile } from '../components';
+import { UserProfile } from 'view/components';
 
 const UserProfilePage = ({ match }) => {
     const { username } = match.params;

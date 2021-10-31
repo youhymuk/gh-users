@@ -1,4 +1,4 @@
-import { DATA_LOADED, DATA_REQUESTED, SET_CURRENT_PAGE, SET_USER_PROFILE, SET_USERS_LIST } from '../../constants';
+import { DATA_LOADED, DATA_REQUESTED, SET_CURRENT_PAGE, SET_USER_PROFILE, SET_USERS_LIST } from 'constants/index';
 
 const initialState = {
     usersList: [],

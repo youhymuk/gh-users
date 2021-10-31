@@ -14,7 +14,7 @@
     },
     "plugins": ["react", "prettier"],
     "rules": {
-        "no-restricted-imports": 0,
+        "no-restricted-imports": [2, { "patterns": ["../*"] }],
         "no-console": 2,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "indent": 0,

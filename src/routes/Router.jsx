@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import routePaths from './routePaths';
+import { UsersListPage, UserProfilePage } from 'view/pages';
 
-import { UsersListPage, UserProfilePage } from '../view/pages';
+import routePaths from './routePaths';
 
 const Router = () => (
     <BrowserRouter>

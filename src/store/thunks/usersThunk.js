@@ -1,6 +1,6 @@
-import { BASE_URL, ITEMS_PER_PAGE } from '../../constants';
-import { makeCallApi } from '../../utils';
-import { dataLoaded, dataRequested, setUserProfile, setUsersList } from '../actions';
+import { BASE_URL, ITEMS_PER_PAGE } from 'constants/index';
+import { makeCallApi } from 'utils';
+import { dataLoaded, dataRequested, setUserProfile, setUsersList } from 'store/actions';
 
 export const getUsers =
     (perPage = ITEMS_PER_PAGE, since = 0) =>
