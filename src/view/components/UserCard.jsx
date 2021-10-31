@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Card, Avatar, Typography } from '@mui/material';
 
 import { routePaths } from 'routes';
@@ -8,6 +9,7 @@ import avatar from 'assets/images/avatar.png';
 
 const UserCard = ({ user }) => {
     const { login, html_url: htmlUrl, avatar_url: avatarUrl } = user;
+
     return (
         <Card variant="outlined" sx={{ width: '180px', height: '180px', textAlign: 'center' }}>
             <Link to={routePaths.userProfilePage(login)}>
@@ -29,6 +31,14 @@ const UserCard = ({ user }) => {
             )}
         </Card>
     );
+};
+
+UserCard.propTypes = {
+    user: PropTypes.shape({
+        avatar_url: PropTypes.string,
+        login: PropTypes.string,
+        html_url: PropTypes.string,
+    }).isRequired,
 };
 
 export default UserCard;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Avatar, Card, Typography } from '@mui/material';
 
 import { transformDate } from 'utils';
@@ -35,13 +37,13 @@ const UserProfile = ({ user }) => {
                         <dd>{name}</dd>
                     </Typography>
                 )}
-                {followers && (
+                {followers != null && (
                     <Typography variant="overline">
                         <dt>Followers:</dt>
                         <dd>{followers}</dd>
                     </Typography>
                 )}
-                {following && (
+                {following != null && (
                     <Typography variant="overline">
                         <dt>Following:</dt>
                         <dd>{following}</dd>
@@ -90,6 +92,21 @@ const UserProfile = ({ user }) => {
             </dl>
         </Card>
     );
+};
+
+UserProfile.propTypes = {
+    user: PropTypes.shape({
+        avatar_url: PropTypes.string,
+        name: PropTypes.string,
+        followers: PropTypes.number,
+        following: PropTypes.number,
+        location: PropTypes.string,
+        blog: PropTypes.string,
+        email: PropTypes.string,
+        bio: PropTypes.string,
+        company: PropTypes.string,
+        created_at: PropTypes.string,
+    }).isRequired,
 };
 
 export default UserProfile;
