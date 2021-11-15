@@ -25,7 +25,14 @@ const UserProfilePage = ({ match }) => {
 
     return (
         <Container sx={{ display: 'flex' }}>
-            {!isLoaded ? (
+            {isLoaded ? (
+                <>
+                    <Link to={routePaths.usersListPage()}>
+                        <ArrowBackIcon sx={{ fontSize: '80px', fill: 'black' }} />
+                    </Link>
+                    <UserProfile user={userProfile} />
+                </>
+            ) : (
                 <CircularProgress
                     size={75}
                     sx={{
@@ -35,13 +42,6 @@ const UserProfilePage = ({ match }) => {
                         transform: 'translate(-50%, -50%)',
                     }}
                 />
-            ) : (
-                <>
-                    <Link to={routePaths.usersListPage()}>
-                        <ArrowBackIcon sx={{ fontSize: '80px', fill: 'black' }} />
-                    </Link>
-                    <UserProfile user={userProfile} />
-                </>
             )}
         </Container>
     );

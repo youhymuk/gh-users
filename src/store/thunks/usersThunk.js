@@ -1,23 +1,23 @@
 import { BASE_URL, ITEMS_PER_PAGE } from 'constants/index';
 import { makeCallApi } from 'utils';
-import { dataLoaded, dataRequested, setUserProfile, setUsersList } from 'store/actions';
+import { setLoaded, dataRequested, setUserProfile, setUsersList } from 'store/actions';
 
 export const getUsers =
     (perPage = ITEMS_PER_PAGE, since = 0) =>
     async (dispatch) => {
-        dispatch(dataRequested());
+        dispatch(setLoaded(false));
 
-        const data = await makeCallApi(`${BASE_URL}?per_page=${perPage}&since=${since}`);
+        const data = await makeCallApi(`${BASE_URL}/users?per_page=${perPage}&since=${since}`);
 
         dispatch(setUsersList(data));
-        dispatch(dataLoaded());
+        dispatch(setLoaded(true));
     };
 
 export const getUserProfile = (username) => async (dispatch) => {
-    dispatch(dataRequested());
+    dispatch(setLoaded(false));
 
-    const data = await makeCallApi(`${BASE_URL}/${username}`);
+    const data = await makeCallApi(`${BASE_URL}/users/${username}`);
 
     dispatch(setUserProfile(data));
-    dispatch(dataLoaded());
+    dispatch(setLoaded(true));
 };

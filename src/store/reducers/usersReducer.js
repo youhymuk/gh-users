@@ -1,34 +1,28 @@
-import { DATA_LOADED, DATA_REQUESTED, SET_CURRENT_PAGE, SET_USER_PROFILE, SET_USERS_LIST } from 'constants/index';
+import { TOGGLE_LOADED, SET_CURRENT_PAGE, SET_USER_PROFILE, SET_USERS_LIST } from 'store/constants';
 
 const initialState = {
-    usersList: [],
-    userProfile: {},
+    list: [],
+    profile: {},
     currentPage: 1,
     isLoaded: false,
 };
 
 const usersReducer = (state = initialState, { type, payload = {} }) => {
     switch (type) {
-        case DATA_REQUESTED:
+        case TOGGLE_LOADED:
             return {
                 ...state,
-                isLoaded: false,
-            };
-        case DATA_LOADED:
-            return {
-                ...state,
-                isRequested: false,
-                isLoaded: true,
+                isLoaded: payload.isLoaded,
             };
         case SET_USERS_LIST:
             return {
                 ...state,
-                usersList: payload.users,
+                list: payload.users,
             };
         case SET_USER_PROFILE:
             return {
                 ...state,
-                userProfile: payload.user,
+                profile: payload.user,
             };
         case SET_CURRENT_PAGE:
             return {

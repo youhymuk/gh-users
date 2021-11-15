@@ -4,7 +4,7 @@ import { Grid, Pagination, CircularProgress } from '@mui/material';
 
 import { ITEMS_PER_PAGE, TOTAL_PAGES_COUNT } from 'constants/index';
 import { selectCurrentPage, selectIsLoaded, selectUsersList } from 'store/selectors';
-import { setCurrentPage } from 'store/actions';
+import { setCurrentPage, setUserProfile } from 'store/actions';
 import { getUsers } from 'store/thunks';
 
 import { UserCard } from 'view/components';
@@ -20,11 +20,16 @@ const UsersListPage = () => {
 
     useEffect(() => {
         dispatch(getUsers(ITEMS_PER_PAGE, sinceIndex));
+
+        return () => dispatch(setUserProfile({}));
     }, [currentPage]);
 
     const onChangePage = (event, page) => {
         dispatch(setCurrentPage(page));
-        setSinceIndex(page > 1 ? page * ITEMS_PER_PAGE : 0);
+
+        const sinceIndex = page > 1 ? page * ITEMS_PER_PAGE - ITEMS_PER_PAGE : 0;
+
+        setSinceIndex(sinceIndex);
     };
 
     return (
@@ -34,7 +39,7 @@ const UsersListPage = () => {
                     sx={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
                 />
             )}
-            {users.length && (
+            {!!users.length && (
                 <>
                     <Grid container spacing={2} sx={{ maxWidth: '1000px', margin: '0 auto' }}>
                         {users.map((user) => (

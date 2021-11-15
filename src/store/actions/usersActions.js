@@ -1,11 +1,8 @@
-import { SET_USERS_LIST, SET_USER_PROFILE, DATA_REQUESTED, DATA_LOADED, SET_CURRENT_PAGE } from 'constants/index';
+import { SET_USERS_LIST, SET_USER_PROFILE, TOGGLE_LOADED, SET_CURRENT_PAGE } from 'store/constants';
 
-export const dataRequested = () => ({
-    type: DATA_REQUESTED,
-});
-
-export const dataLoaded = () => ({
-    type: DATA_LOADED,
+export const setLoaded = (isLoaded) => ({
+    type: TOGGLE_LOADED,
+    payload: { isLoaded },
 });
 
 export const setUsersList = (users) => ({

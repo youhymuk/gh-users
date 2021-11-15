@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.github.com/users';
+export const BASE_URL = 'https://api.github.com';
 
 export const ITEMS_PER_PAGE = 25;
 

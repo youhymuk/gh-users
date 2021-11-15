@@ -37,13 +37,13 @@ const UserProfile = ({ user }) => {
                         <dd>{name}</dd>
                     </Typography>
                 )}
-                {followers != null && (
+                {typeof followers === 'number' && (
                     <Typography variant="overline">
                         <dt>Followers:</dt>
                         <dd>{followers}</dd>
                     </Typography>
                 )}
-                {following != null && (
+                {typeof following === 'number' && (
                     <Typography variant="overline">
                         <dt>Following:</dt>
                         <dd>{following}</dd>
